@@ -12,36 +12,33 @@ if(isset($_GET['id'])){
     $category_id        = $data['category_id'];
     $category_name      = $data['category_name'];
     $category_entrydate = $data['category_entrydate'];
-
-    // echo$category_id;
-    // echo $category_name;
-    // echo $category_entrydate;
-
-    if(isset($_POST['category_name'])){
-        $new_category_id = $_POST['category_id'];
-        $new_category_name = $_POST['category_name'];
-        $new_category_entrydate = $_POST['category_entrydate'];
-
-        $sql = "UPDATE category SET 
-                category_name = '$new_category_name',
-                category_entrydate = '$new_category_entrydate'
-                WHERE category_id = '$new_category_id'
-            ";
-
-       if($conn->query($sql) == TRUE){
-
-            echo "Record updated successfully";
-
-       } else{
-
-            echo "Error updating record: " . $conn->error;
-
-       }
-
-    }
-
  
 }
+
+if(isset($_POST['category_name'])){
+    $new_category_id = $_POST['category_id'];
+    $new_category_name = $_POST['category_name'];
+    $new_category_entrydate = $_POST['category_entrydate'];
+
+    $sql = "UPDATE category SET 
+            category_name = '$new_category_name',
+            category_entrydate = '$new_category_entrydate'
+            WHERE category_id = '$new_category_id'
+        ";
+
+   if($conn->query($sql) == TRUE){
+
+        echo "Record updated successfully";
+
+   } else{
+
+        echo "Error updating record: " . $conn->error;
+
+   }
+
+}
+
+
 
 ?>
 

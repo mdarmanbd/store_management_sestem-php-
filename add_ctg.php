@@ -27,7 +27,7 @@ if(isset($_POST['category_name'])){
     <title>Add_ctg</title>
 </head>
 <body>
-    <form action="add_ctg.php" method="POST">
+    <form action="<?php $_SERVER['PHP_SELF'] ?> " method="POST">
         Category: <br>
         <input type="text" name="category_name"><br><br>
         Category Entry Date: <br>
